@@ -404,7 +404,7 @@ def main(_):
             export_units[frame]={}
             for jnt_index, (_x, _y, _z) in enumerate(zip(x,y,z)):
                 export_units[frame][jnt_index] = {"translate": [_x, _y, _z]}
-                viz.show3Dpose(p3d, ax, lcolor="#9b59b6", rcolor="#2ecc71")
+                # viz.show3Dpose(p3d, ax, lcolor="#9b59b6", rcolor="#2ecc71")
 
             pngName = 'png/pose_frame_{0}.png'.format(str(frame).zfill(12))
             plt.savefig(pngName)

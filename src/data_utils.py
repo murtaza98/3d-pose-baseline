@@ -80,10 +80,10 @@ def load_data( bpath, subjects, actions, dim=3 ):
   for subj in subjects:
     for action in actions:
 
-      print('Reading subject {0}, action {1}'.format(subj, action))
+      # print('Reading subject {0}, action {1}'.format(subj, action))
 
       dpath = os.path.join( bpath, 'S{0}'.format(subj), 'MyPoses/{0}D_positions'.format(dim), '{0}*.h5'.format(action) )
-      print( dpath )
+      # print( dpath )
 
       fnames = glob.glob( dpath )
 
@@ -98,7 +98,7 @@ def load_data( bpath, subjects, actions, dim=3 ):
         # This rule makes sure that WalkDog and WalkTogeter are not loaded when
         # Walking is requested.
         if seqname.startswith( action ):
-          print( fname )
+          # print( fname )
           loaded_seqs = loaded_seqs + 1
 
           with h5py.File( fname, 'r' ) as h5f:
@@ -138,10 +138,10 @@ def load_stacked_hourglass(data_dir, subjects, actions):
   for subj in subjects:
     for action in actions:
 
-      print('Reading subject {0}, action {1}'.format(subj, action))
+      # print('Reading subject {0}, action {1}'.format(subj, action))
 
       dpath = os.path.join( data_dir, 'S{0}'.format(subj), 'StackedHourglass/{0}*.h5'.format(action) )
-      print( dpath )
+      # print( dpath )
 
       fnames = glob.glob( dpath )
 
@@ -157,7 +157,7 @@ def load_stacked_hourglass(data_dir, subjects, actions):
         # This rule makes sure that WalkDog and WalkTogeter are not loaded when
         # Walking is requested.
         if seqname.startswith( action ):
-          print( fname )
+          # print( fname )
           loaded_seqs = loaded_seqs + 1
 
           # Load the poses from the .h5 file

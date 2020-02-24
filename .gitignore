@@ -13,3 +13,4 @@ imgs
 gif_output
 .idea
 venv
+maya/*.json
