@@ -8,3 +8,8 @@ experiments/
 *.swp
 *.png
 *.tar.gz
+json*
+imgs
+gif_output
+.idea
+venv

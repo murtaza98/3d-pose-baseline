@@ -1,6 +1,5 @@
 import json 
 import maya.cmds as cmds
-import pymel.core as pm
 import maya.OpenMaya as om
 import math
 import re
@@ -10,7 +9,7 @@ import os
 #path to imageplane content
 openpose_images = "/home/flyn/git/3d-pose-baseline/test_images/" # replace it with abs path like "/path/to/bg_images" 
 #path to 3d-pose-baseline
-threed_pose_baseline = "/home/flyn/git/3d-pose-baseline/"
+threed_pose_baseline = "/home/murtaza/PycharmProjects/3d-pose-baseline/"
 #for 3d use 3d_data.json and set three_dim to True
 input_json_path = [os.path.join(threed_pose_baseline, "maya/{0}.json".format(_data)) for _data in ["3d_data", "2d_data"]] # replace it with abs path like "/path/to/2d_data.json" 
 
@@ -167,4 +166,4 @@ def main():
             file_path = os.path.join(openpose_images, image_file)
             frame_idx = int(re.findall("(\d+)", image_file)[-1]) 
             os.rename(file_path, os.path.join(threed_pose_baseline, "maya/image_plane/image.{0}.png".format(frame_idx)))
-        print "use", os.path.join(threed_pose_baseline, "maya/image_plane/"), " for imageplane."
+        print("use", os.path.join(threed_pose_baseline, "maya/image_plane/"), " for imageplane.")

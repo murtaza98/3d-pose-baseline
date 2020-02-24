@@ -433,7 +433,7 @@ def sample():
     model = create_model(sess, actions, batch_size)
     print("Model loaded")
 
-    for key2d in test_set_2d.keys():
+    for key2d in list(test_set_2d.keys())[0:10]:
 
       (subj, b, fname) = key2d
       print( "Subject: {}, action: {}, fname: {}".format(subj, b, fname) )
